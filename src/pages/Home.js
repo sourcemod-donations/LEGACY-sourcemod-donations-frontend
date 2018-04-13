@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import {Button} from '@blueprintjs/core';
+import apiFetch from "../apiFetch";
+import SteamAuthentication from "../auth/SteamAuthentication";
 
 class Home extends Component {
   render() {
     return (
-        <div className="container">
-          <div className="row justify-content-md-center">
-            <div className="col col-lg-8">
-              <h1>Home component!</h1>
-              <Button>test</Button>
-            </div>
-          </div>
+        <div>
+          <h1>Home component!</h1>
+          <Button onClick={() => apiFetch('products/1')}>test</Button>
         </div>
     )
   }
