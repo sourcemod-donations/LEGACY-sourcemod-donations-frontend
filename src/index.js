@@ -7,13 +7,27 @@ import registerServiceWorker from './registerServiceWorker';
 import {HashRouter as Router, Route} from 'react-router-dom'
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
+import {applyMiddleware, compose, createStore} from "redux";
+import thunkMiddleware from 'redux-thunk';
+import {Provider} from "react-redux";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+
+const store = createStore(
+    () => {},
+    composeEnhancers(
+        applyMiddleware(thunkMiddleware),
+    ));
 
 const Root = () => (
-    <Router>
-      <Layout>
-        <Route path="/" component={Home}/>
-      </Layout>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Layout>
+          <Route path="/" component={Home}/>
+        </Layout>
+      </Router>
+    </Provider>
 );
 
 ReactDOM.render(<Root/>, document.getElementById('root'));
