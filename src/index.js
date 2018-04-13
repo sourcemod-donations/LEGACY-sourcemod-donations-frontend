@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
+import 'bootstrap/dist/css/bootstrap-grid.css';
 import registerServiceWorker from './registerServiceWorker';
 import { HashRouter as Router, Route } from 'react-router-dom'
 import Home from "./pages/Home";
