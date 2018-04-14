@@ -1,6 +1,6 @@
 import config from "./config";
 
-const apiFetch = (url, args) => {
+const apiFetch = (url, args = {}) => {
   url = config.API_URL + url;
 
   args.headers = {

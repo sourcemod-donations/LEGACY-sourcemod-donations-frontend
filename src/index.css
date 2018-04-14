@@ -7,3 +7,16 @@ body {
 .container > .pt-navbar {
   box-shadow: none;
 }
+
+.Product-card {
+  margin-bottom: 20px;
+}
+
+.Navbar {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.align-right {
+  text-align: right;
+}

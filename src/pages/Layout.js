@@ -3,6 +3,7 @@ import {Alignment, Button, Navbar, NavbarDivider, NavbarGroup, NavbarHeading} fr
 import {connect} from "react-redux";
 import Authenticated from "../components/navbar/Authenticated";
 import NotAuthenticated from "../components/navbar/NotAuthenticated";
+import {Link} from "react-router-dom";
 
 class Layout extends Component {
 
@@ -11,11 +12,14 @@ class Layout extends Component {
 
     return (
         <div className="container">
-          <Navbar>
+          <Navbar className="Navbar">
             <NavbarGroup align={Alignment.LEFT}>
               <NavbarHeading>Blueprint</NavbarHeading>
               <NavbarDivider/>
-              <Button className="pt-minimal" icon="home" text="Home"/>
+
+              <Link to="/">
+                <Button className="pt-minimal" icon="home" text="Home"/>
+              </Link>
             </NavbarGroup>
 
             <NavbarGroup align={Alignment.RIGHT}>
@@ -27,9 +31,7 @@ class Layout extends Component {
             </NavbarGroup>
           </Navbar>
 
-          <div className="row justify-content-md-center">
-            {this.props.children}
-          </div>
+          {this.props.children}
         </div>
     )
   }
