@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import {Alignment, Button, Navbar, NavbarDivider, NavbarGroup, NavbarHeading} from '@blueprintjs/core';
+import {connect} from "react-redux";
+import Authenticated from "../components/navbar/Authenticated";
+import NotAuthenticated from "../components/navbar/NotAuthenticated";
 
 class Layout extends Component {
+
   render() {
+    const {isAuthenticated, username} = this.props.auth;
+
     return (
         <div className="container">
           <Navbar>
@@ -13,9 +19,14 @@ class Layout extends Component {
             </NavbarGroup>
 
             <NavbarGroup align={Alignment.RIGHT}>
-              <Button icon="user" className="pt-minimal" text="Sign in"/>
+              {isAuthenticated ?
+                  <Authenticated username={username}/>
+                  :
+                  <NotAuthenticated/>
+              }
             </NavbarGroup>
           </Navbar>
+
           <div className="row justify-content-md-center">
             {this.props.children}
           </div>
@@ -24,4 +35,10 @@ class Layout extends Component {
   }
 }
 
-export default Layout
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+};
+
+export default connect(mapStateToProps)(Layout);

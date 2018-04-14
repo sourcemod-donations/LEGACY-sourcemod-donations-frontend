@@ -1,9 +1,14 @@
 import config from "./config";
 
-const apiFetch = (url) => {
+const apiFetch = (url, args) => {
   url = config.API_URL + url;
 
-  return fetch(url);
+  args.headers = {
+    ...args.headers,
+    'Content-Type': 'application/json'
+  };
+
+  return fetch(url, args);
 };
 
 export default apiFetch;
