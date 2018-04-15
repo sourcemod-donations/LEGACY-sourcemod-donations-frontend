@@ -20,3 +20,7 @@ body {
 .align-right {
   text-align: right;
 }
+
+.width-100 {
+  width: 100%;
+}

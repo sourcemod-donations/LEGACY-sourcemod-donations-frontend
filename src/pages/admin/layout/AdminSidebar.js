@@ -19,7 +19,7 @@ class AdminSidebar extends Component {
     return (
         <Menu>
           <MenuLink icon="home" text="Home"/>
-          <MenuLink icon="new-text-box" text="Products"/>
+          <MenuLink icon="new-text-box" text="Products" link="/admin/products"/>
           <MenuLink icon="cog" text="Settings"/>
         </Menu>
     )

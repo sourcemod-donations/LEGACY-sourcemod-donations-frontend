@@ -12,7 +12,7 @@ class AdminLayout extends Component {
         <div className="container">
           <AdminNavbar/>
 
-          <div className="row">
+          <div className="row" style={{marginTop: '15px'}}>
             <div className="col-3">
               <AdminSidebar/>
             </div>

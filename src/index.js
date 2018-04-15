@@ -13,6 +13,7 @@ import AdminLayout from "./pages/admin/layout/AdminLayout";
 import AdminHome from "./pages/admin/AdminHome";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
+import AdminProductsListContainer from "./pages/admin/products/list/AdminProductsListContainer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -25,22 +26,25 @@ const AdminRoutes = ({match}) => {
   const {path} = match;
 
   return (
-      <Switch>
-        <AdminLayout>
+
+      <AdminLayout>
+        <Switch>
           <Route exact path={`${path}/home`} component={AdminHome}/>
-          <Redirect from={path} to={`${path}/home`}/>
-        </AdminLayout>
-      </Switch>
+          <Route exact path={`${path}/products`} component={AdminProductsListContainer}/>
+          <Redirect to={`${path}/home`}/>
+        </Switch>
+      </AdminLayout>
   );
 };
 
 const ClientRoutes = ({matches}) => {
   return (
-      <Switch>
-        <Layout>
+
+      <Layout>
+        <Switch>
           <Route exact path="/" component={Home}/>
-        </Layout>
-      </Switch>
+        </Switch>
+      </Layout>
   );
 };
 
