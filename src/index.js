@@ -9,7 +9,7 @@ import {applyMiddleware, compose, createStore} from "redux";
 import thunkMiddleware from 'redux-thunk';
 import {Provider} from "react-redux";
 import rootReducer from "./reducers";
-import AdminLayout from "./pages/admin/Layout/AdminLayout";
+import AdminLayout from "./pages/admin/layout/AdminLayout";
 import AdminHome from "./pages/admin/AdminHome";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
