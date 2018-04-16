@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Alignment, Button, Navbar, NavbarDivider, NavbarGroup, NavbarHeading} from '@blueprintjs/core';
 import {connect} from "react-redux";
-import Authenticated from "../components/navbar/Authenticated";
-import NotAuthenticated from "../components/navbar/NotAuthenticated";
+import Authenticated from "../navbar/Authenticated";
+import NotAuthenticated from "../navbar/NotAuthenticated";
 import {Link} from "react-router-dom";
 
 class Layout extends Component {

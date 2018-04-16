@@ -3,7 +3,7 @@ import {Button} from '@blueprintjs/core';
 import apiFetch from "../apiFetch";
 import ProductsContainer from "../components/products/ProductsContainer";
 
-class Home extends Component {
+class HomePage extends Component {
   render() {
     return (
         <Fragment>
@@ -14,4 +14,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default HomePage

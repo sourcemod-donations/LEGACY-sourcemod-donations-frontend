@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Button} from '@blueprintjs/core';
 
-class AdminHome extends Component {
+class AdminHomePage extends Component {
   render() {
     return (
         <h1>Welcome!</h1>
@@ -9,4 +9,4 @@ class AdminHome extends Component {
   }
 }
 
-export default AdminHome
+export default AdminHomePage

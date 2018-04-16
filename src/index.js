@@ -9,11 +9,11 @@ import {applyMiddleware, compose, createStore} from "redux";
 import thunkMiddleware from 'redux-thunk';
 import {Provider} from "react-redux";
 import rootReducer from "./reducers";
-import AdminLayout from "./pages/admin/layout/AdminLayout";
-import AdminHome from "./pages/admin/AdminHome";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import AdminProductsListContainer from "./pages/admin/products/list/AdminProductsListContainer";
+import AdminLayout from "./components/admin/layout/AdminLayout";
+import AdminHomePage from "./pages/admin/AdminHomePage";
+import Layout from "./components/layout/Layout";
+import HomePage from "./pages/HomePage";
+import AdminProductsListPage from "./pages/admin/products/AdminProductsListPage";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -29,8 +29,8 @@ const AdminRoutes = ({match}) => {
 
       <AdminLayout>
         <Switch>
-          <Route exact path={`${path}/home`} component={AdminHome}/>
-          <Route exact path={`${path}/products`} component={AdminProductsListContainer}/>
+          <Route exact path={`${path}/home`} component={AdminHomePage}/>
+          <Route exact path={`${path}/products`} component={AdminProductsListPage}/>
           <Redirect to={`${path}/home`}/>
         </Switch>
       </AdminLayout>
@@ -42,7 +42,7 @@ const ClientRoutes = ({matches}) => {
 
       <Layout>
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/" component={HomePage}/>
         </Switch>
       </Layout>
   );
