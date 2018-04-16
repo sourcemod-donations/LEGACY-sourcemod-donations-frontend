@@ -24,3 +24,7 @@ body {
 .width-100 {
   width: 100%;
 }
+
+.pt-input-group {
+  margin-bottom: 10px;
+}
