@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Classes, Spinner} from '@blueprintjs/core';
+import {Link} from "react-router-dom";
 
 class AdminProductsList extends Component {
 
@@ -48,7 +49,9 @@ class AdminProductsList extends Component {
           <td>{product.id}</td>
           <td>{product.name}</td>
           <td>
-            <Button text={`Edit`} className={`${Classes.BUTTON} pt-intent-primary`}/>
+            <Link to={`/admin/products/${product.id}`}>
+              <Button text={`Edit`} className={`${Classes.BUTTON} pt-intent-primary`}/>
+            </Link>
           </td>
         </tr>
     )
