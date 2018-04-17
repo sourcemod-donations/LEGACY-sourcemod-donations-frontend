@@ -16,6 +16,7 @@ import HomePage from "./pages/HomePage";
 import AdminProductsListPage from "./pages/admin/products/AdminProductsListPage";
 import AdminProductsEditContainer from "./components/admin/products/edit/AdminProductsEditContainer";
 import AdminProductsEditPage from "./pages/admin/products/AdminProductsEditPage";
+import ProductSingleViewPage from "./pages/ProductSingleViewPage";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -40,12 +41,14 @@ const AdminRoutes = ({match}) => {
   );
 };
 
-const ClientRoutes = ({matches}) => {
-  return (
+const ClientRoutes = ({match}) => {
+  const {path} = match;
 
+  return (
       <Layout>
         <Switch>
           <Route exact path="/" component={HomePage}/>
+          <Route path={`/products/:productId`} component={ProductSingleViewPage}/>
         </Switch>
       </Layout>
   );

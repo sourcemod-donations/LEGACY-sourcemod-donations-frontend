@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Card, Classes, Spinner} from '@blueprintjs/core';
+import {Link} from "react-router-dom";
 
 class ProductsView extends Component {
 
@@ -42,7 +43,9 @@ class ProductsView extends Component {
               {product.description}
             </p>
             <div className="align-right">
-              <Button text={`Purchase $${product.price}`} className={Classes.BUTTON}/>
+              <Link to={`/products/${product.id}`}>
+                <Button text={`Purchase $${product.price}`} className={Classes.BUTTON}/>
+              </Link>
             </div>
           </Card>
         </div>
