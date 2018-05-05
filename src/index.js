@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import 'bootstrap/dist/css/bootstrap-grid.css';
+import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import {applyMiddleware, compose, createStore} from "redux";
@@ -17,6 +17,8 @@ import AdminProductsListPage from "./pages/admin/products/AdminProductsListPage"
 import AdminProductsEditContainer from "./components/admin/products/edit/AdminProductsEditContainer";
 import AdminProductsEditPage from "./pages/admin/products/AdminProductsEditPage";
 import ProductSingleViewPage from "./pages/ProductSingleViewPage";
+import PurchasePage from "./pages/PurchasePage";
+import ProgressTracker from "./components/generic/ProgressTracker/ProgressTracker";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -49,6 +51,8 @@ const ClientRoutes = ({match}) => {
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route path={`/products/:productId`} component={ProductSingleViewPage}/>
+          <Route exact path={`/purchase`} component={PurchasePage}/>
+          <Route exact path={`/tracker`} component={ProgressTracker}/>
         </Switch>
       </Layout>
   );

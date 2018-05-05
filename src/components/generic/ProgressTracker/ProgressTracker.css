@@ -3,6 +3,7 @@
     margin: 40px auto;
     padding: 0;
     list-style: none;
+    flex: auto;
 }
 
 .progress-tracker__step {
@@ -36,10 +37,6 @@
 
 .progress-tracker__step::after {
     background-color: #b6b6b6;
-}
-
-.progress-tracker__step.is-active .progress-title {
-    font-weight: 400;
 }
 
 .progress-tracker__step > a {
